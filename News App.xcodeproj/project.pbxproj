@@ -16,6 +16,7 @@
 		5195940E2579931D00412A50 /* News_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195940D2579931D00412A50 /* News_AppTests.swift */; };
 		519594192579931D00412A50 /* News_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519594182579931D00412A50 /* News_AppUITests.swift */; };
 		5195942B257995EC00412A50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195942A257995EC00412A50 /* Constants.swift */; };
+		519594392579A69400412A50 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519594382579A69400412A50 /* NewsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		519594182579931D00412A50 /* News_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News_AppUITests.swift; sourceTree = "<group>"; };
 		5195941A2579931D00412A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5195942A257995EC00412A50 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		519594382579A69400412A50 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		519594352579A60100412A50 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				519594382579A69400412A50 /* NewsTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				519593FB2579931A00412A50 /* ViewController.swift in Sources */,
 				519593F72579931A00412A50 /* AppDelegate.swift in Sources */,
 				519593F92579931A00412A50 /* SceneDelegate.swift in Sources */,
+				519594392579A69400412A50 /* NewsTableViewController.swift in Sources */,
 				5195942B257995EC00412A50 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
