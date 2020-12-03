@@ -101,6 +101,10 @@
 		519593F52579931A00412A50 /* News App */ = {
 			isa = PBXGroup;
 			children = (
+				519594372579A63600412A50 /* Services */,
+				519594342579A5F700412A50 /* Models */,
+				519594352579A60100412A50 /* Views */,
+				519594362579A60D00412A50 /* ViewModels */,
 				51959429257995D700412A50 /* Utilities */,
 				519593F62579931A00412A50 /* AppDelegate.swift */,
 				519593F82579931A00412A50 /* SceneDelegate.swift */,
@@ -137,6 +141,34 @@
 				5195942A257995EC00412A50 /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		519594342579A5F700412A50 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		519594352579A60100412A50 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		519594362579A60D00412A50 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		519594372579A63600412A50 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
