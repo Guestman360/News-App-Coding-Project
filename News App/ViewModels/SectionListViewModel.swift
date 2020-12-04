@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-// Enum to help differentiate sections from JSON
 public enum Header: String, Decodable {
     case section = "Section"
     case hero = "Hero"
@@ -18,12 +17,11 @@ public enum Header: String, Decodable {
 struct SectionListViewModel {
     let sectionItems: [SectionItem]
     
-    init(sectionItems: [SectionItem], of type: Header) {
+    init(sectionItems: [SectionItem], type: Header) {
         self.sectionItems = sectionItems.filter { $0.type == type.rawValue }
     }
     
     func numberOfSections(section type: Header) -> Int {
-//        print("Count: \(sectionItems.count)")
         return sectionItems.count
     }
     
@@ -35,7 +33,7 @@ struct SectionListViewModel {
         return 2
     }
     
-    func sectionAtIndex(_ index : Int) -> SectionViewModel {
+    func sectionAtIndex(_ index: Int) -> SectionViewModel {
         return SectionViewModel(sectionItems[index])
     }
 }

@@ -8,24 +8,24 @@
 import Foundation
 
 struct ArticleViewModel {
-    private let article : Article
+    private let article: Article
     
-    var tease : URL? {
+    var tease: URL? {
         guard let tease = self.article.tease else {
             return nil
         }
         return URL(string: tease)
     }
     
-    var headline : String {
+    var headline: String {
         return self.article.headline ?? ""
     }
     
-    var summary : String {
+    var summary: String {
         return self.article.summary ?? ""
     }
     
-    init(_ article : Article) {
+    init(_ article: Article) {
         self.article = article
     }
 }

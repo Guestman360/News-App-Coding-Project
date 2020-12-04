@@ -17,8 +17,6 @@ class NewsService {
         case decodeError
     }
     
-    // Use NewsService as Singleton??
-//    public static let shared = NewsService()
     init() {}
     private let urlSession = URLSession.shared
     private let newsURL = URL(string: Constants.BASE_NEWS_API_URL)!
@@ -28,30 +26,6 @@ class NewsService {
        return jsonDecoder
     }()
    
-    // Simpler network request but decided to experiment with more comprehensive approach below
-//    static func getArticles(url : URL , completion : @escaping (NewsData?) -> () )  {
-//
-//        print("Making web request")
-//
-//        URLSession.shared.dataTask(with: url) { (data, response, error) in
-//
-//            if let error = error {
-//                print(error.localizedDescription)
-//                completion(nil)
-//                return
-//            }
-//
-//            if let data = data {
-//                print("Fetching response")
-//                if let response = try? JSONDecoder().decode(NewsData.self, from: data) {
-//                    print("Completion handler")
-//                    completion(response)
-//                }
-//            }
-//        }.resume()
-//    }
-    
-    // Leverage Result enum that Swift provides us for better error handling and descriptions
     private func fetchResources<T: Decodable>(url: URL, completion: @escaping (Result<T, APIServiceError>) -> Void) {
         guard let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
             completion(.failure(.invalidEndpoint))

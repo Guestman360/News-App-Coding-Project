@@ -7,7 +7,6 @@
 
 import Foundation
 
-// Extension on URLSession datatask that lets us use Swift Result type for the completion handler closure
 extension URLSession {
     func dataTask(with url: URL, result: @escaping (Result<(URLResponse, Data), Error>) -> Void) -> URLSessionDataTask {
         return dataTask(with: url) { (data, response, error) in

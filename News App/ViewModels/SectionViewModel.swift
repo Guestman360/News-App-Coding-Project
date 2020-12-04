@@ -8,25 +8,25 @@
 import Foundation
 
 struct SectionViewModel {
-    private let sectionItem : SectionItem
+    private let sectionItem: SectionItem
     
-    var id : String {
+    var id: String {
         return self.sectionItem.id ?? ""
     }
     
-    var type : String {
+    var type: String {
         return self.sectionItem.type ?? ""
     }
     
-    var header : String? {
+    var header: String? {
         return self.sectionItem.header ?? " "
     }
     
-    var items : [Article] {
+    var items: [Article] {
         return self.sectionItem.items ?? []
     }
     
-    init(_ sectionItem : SectionItem) {
+    init(_ sectionItem: SectionItem) {
         self.sectionItem = sectionItem
     }
     
@@ -38,7 +38,7 @@ struct SectionViewModel {
         return items.count
     }
     
-    func articleAtIndex(_ index : Int) -> ArticleViewModel? {
+    func articleAtIndex(_ index: Int) -> ArticleViewModel? {
         guard let article = sectionItem.items?[index] else {
             return nil
         }

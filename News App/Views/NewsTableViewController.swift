@@ -22,14 +22,14 @@ class NewsTableViewController: UITableViewController {
         fetchNewsFromService()
     }
     
-    func fetchNewsFromService() {
+    private func fetchNewsFromService() {
         newsService.fetchNews { (result) in
             switch result {
             case .success(let response):
                 guard let data = response.data else {
                     return
                 }
-                self.sectionListViewModel = SectionListViewModel(sectionItems: data, of: .section)
+                self.sectionListViewModel = SectionListViewModel(sectionItems: data, type: .section)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
