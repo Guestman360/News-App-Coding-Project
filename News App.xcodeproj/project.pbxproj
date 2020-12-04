@@ -24,6 +24,7 @@
 		51959452257A0EAD00412A50 /* SectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51959451257A0EAD00412A50 /* SectionViewModel.swift */; };
 		51959457257A0EBF00412A50 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51959456257A0EBF00412A50 /* ArticleViewModel.swift */; };
 		5195945C257A14BF00412A50 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195945B257A14BF00412A50 /* NewsService.swift */; };
+		51959461257A201000412A50 /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51959460257A201000412A50 /* URLSessionExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		51959451257A0EAD00412A50 /* SectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewModel.swift; sourceTree = "<group>"; };
 		51959456257A0EBF00412A50 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		5195945B257A14BF00412A50 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		51959460257A201000412A50 /* URLSessionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				5195942A257995EC00412A50 /* Constants.swift */,
+				51959460257A201000412A50 /* URLSessionExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				51959448257A0D8D00412A50 /* Article.swift in Sources */,
 				5195945C257A14BF00412A50 /* NewsService.swift in Sources */,
 				519594392579A69400412A50 /* NewsTableViewController.swift in Sources */,
+				51959461257A201000412A50 /* URLSessionExtensions.swift in Sources */,
 				51959457257A0EBF00412A50 /* ArticleViewModel.swift in Sources */,
 				51959443257A0D5700412A50 /* SectionItem.swift in Sources */,
 				51959452257A0EAD00412A50 /* SectionViewModel.swift in Sources */,
