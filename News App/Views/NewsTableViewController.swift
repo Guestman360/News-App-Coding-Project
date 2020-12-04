@@ -8,15 +8,33 @@
 import UIKit
 
 class NewsTableViewController: UITableViewController {
+    
+    let newsService: NewsService = NewsService()
+    
+    private var sectionListViewModel: SectionListViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "NBC News"
+        
+        getNews()
+    }
+    
+    func getNews() {
+        newsService.fetchNews { (result) in
+            switch result {
+            case .success(let response):
+                guard let data = response.data else {
+                    return
+                }
+                self.sectionListViewModel = SectionListViewModel(sectionItems: data)
+//                print(self.sectionListViewModel.sectionItems[0].id ?? "No value here...")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 
     // MARK: - Table view data source

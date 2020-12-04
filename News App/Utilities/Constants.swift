@@ -7,4 +7,6 @@
 
 import Foundation
 
-let BASE_API_URL = "https://s3.amazonaws.com/shrekendpoint/news.json"
+struct Constants {
+    static let BASE_NEWS_API_URL = "https://s3.amazonaws.com/shrekendpoint/news.json"
+}
