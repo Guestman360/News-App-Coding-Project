@@ -22,4 +22,7 @@ class ProminentNewsCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func setUpCellWithViewModel(_ article: ArticleViewModel) {
+        self.textLabel?.text = article.headline
+    }
 }

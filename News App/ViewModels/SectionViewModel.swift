@@ -18,6 +18,10 @@ struct SectionViewModel {
         return self.sectionItem.type ?? ""
     }
     
+    var header : String? {
+        return self.sectionItem.header ?? " "
+    }
+    
     var items : [Article] {
         return self.sectionItem.items ?? []
     }
@@ -34,7 +38,7 @@ struct SectionViewModel {
         return items.count
     }
     
-    func sectionAtIndex(_ index : Int) -> ArticleViewModel? {
+    func articleAtIndex(_ index : Int) -> ArticleViewModel? {
         guard let article = sectionItem.items?[index] else {
             return nil
         }

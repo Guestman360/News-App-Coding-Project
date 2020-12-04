@@ -19,18 +19,20 @@ class NewsTableViewController: UITableViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "NBC News"
         
-        getNews()
+        fetchNewsFromService()
     }
     
-    func getNews() {
+    func fetchNewsFromService() {
         newsService.fetchNews { (result) in
             switch result {
             case .success(let response):
                 guard let data = response.data else {
                     return
                 }
-                self.sectionListViewModel = SectionListViewModel(sectionItems: data)
-//                print(self.sectionListViewModel.sectionItems[0].id ?? "No value here...")
+                self.sectionListViewModel = SectionListViewModel(sectionItems: data, of: .section)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -40,22 +42,28 @@ class NewsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        guard let viewModel = self.sectionListViewModel else { return 0 }
+        return viewModel.numberOfSections(section: .section)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        guard let sectionItems = self.sectionListViewModel.sectionItems[section].items else { return 0 }
+        return sectionItems.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let viewModel = self.sectionListViewModel else { return nil }
+        return viewModel.sectionAtIndex(section).header
     }
 
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: ProminentNewsCell.identifier, for: indexPath) as! ProminentNewsCell
-//
-//        // Configure the cell...
-//
-//        return cell
-//    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProminentNewsCell.identifier, for: indexPath) as! ProminentNewsCell
+
+        let section = self.sectionListViewModel.sectionAtIndex(indexPath.section)
+        cell.textLabel?.text = section.items[indexPath.row].headline
+
+        return cell
+    }
     
 
     /*

@@ -18,12 +18,13 @@ public enum Header: String, Decodable {
 struct SectionListViewModel {
     let sectionItems: [SectionItem]
     
-    init(sectionItems : [SectionItem]) {
-        self.sectionItems = sectionItems
+    init(sectionItems: [SectionItem], of type: Header) {
+        self.sectionItems = sectionItems.filter { $0.type == type.rawValue }
     }
     
     func numberOfSections(section type: Header) -> Int {
-        return sectionItems.filter { $0.type == type.rawValue }.count
+//        print("Count: \(sectionItems.count)")
+        return sectionItems.count
     }
     
     func numberOfRowsForSection(_ sectionIndex: Int) -> Int {
