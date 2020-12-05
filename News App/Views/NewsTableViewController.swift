@@ -21,6 +21,10 @@ class NewsTableViewController: UITableViewController {
         
         self.tableView.register(NewsCell.self, forCellReuseIdentifier: NewsCell.identifier)
         
+        // putting labels in stackview causes issues when scrolling
+//        self.tableView.rowHeight = UITableView.automaticDimension
+//        self.tableView.estimatedRowHeight = 200.0
+        
         fetchNewsFromService()
     }
     

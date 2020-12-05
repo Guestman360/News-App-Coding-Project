@@ -16,8 +16,8 @@ class NewsCell: UITableViewCell {
     let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 20
-        stackView.distribution = .fillProportionally
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
         stackView.axis = .vertical
         return stackView
     }()
@@ -31,21 +31,27 @@ class NewsCell: UITableViewCell {
         stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
         
-        let newsCellView = NewsCellRowView() //NewsCellRowView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 500))
+        let newsCellView = NewsCellRowView()
         newsCellView.teaserImageView.image = UIImage(systemName: "square.and.arrow.down")
-        newsCellView.headlineLabel.text = "head"
-        newsCellView.summaryLabel.text = "lorem ipsum delorum blah blah blah blah blah blbha"
-//        newsCellView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        newsCellView.headlineLabel.text = "headline 1"
+        newsCellView.summaryLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id erat ut sapien hendrerit auctor."
         
-        let newsCellView2 = NewsCellRowView() //NewsCellRowView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 500))
-        newsCellView2.teaserImageView.image = UIImage(systemName: "square.and.arrow.down")
-        newsCellView2.headlineLabel.text = "tail"
-        newsCellView2.summaryLabel.text = "blah blah blah blah blah blbha"
-//        newsCellView2.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        let newsCellView2 = NewsCellRowView()
+        newsCellView2.teaserImageView.image = UIImage(systemName: "arrow.uturn.up")
+        newsCellView2.headlineLabel.text = "headline 2"
+        newsCellView2.summaryLabel.text = "Pellentesque lacinia, velit in bibendum tincidunt, justo sapien ultricies ante, et placerat elit nulla eu nibh."
+        
+        let newsCellView3 = NewsCellRowView()
+        newsCellView3.teaserImageView.image = UIImage(systemName: "arrow.uturn.down")
+        newsCellView3.headlineLabel.text = "headline 3"
+        newsCellView3.summaryLabel.text = "Aliquam urna augue, finibus non dui eget, semper porttitor enim. In ultrices auctor ex nec egestas. Nulla volutpat, urna eu dictum facilisis, ligula erat molestie magna, at suscipit turpis sem quis leo."
 
         
         stackView.addArrangedSubview(newsCellView)
         stackView.addArrangedSubview(newsCellView2)
+        stackView.addArrangedSubview(newsCellView3)
+        
+        self.layoutIfNeeded()
         
 //        for view in views {
 //            stackView.addArrangedSubview(view)
