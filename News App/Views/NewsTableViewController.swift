@@ -60,7 +60,10 @@ class NewsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProminentNewsCell.identifier, for: indexPath) as! ProminentNewsCell
 
         let section = self.sectionListViewModel.sectionAtIndex(indexPath.section)
-        cell.textLabel?.text = section.items[indexPath.row].headline
+        // change items to articles??
+        if let article = section.articleAtIndex(indexPath.row) {
+            cell.setUpCellWithViewModel(article)
+        }
 
         return cell
     }
