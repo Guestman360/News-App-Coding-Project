@@ -31,6 +31,8 @@
 		5195947C257B248A00412A50 /* UIDeviceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195947B257B248A00412A50 /* UIDeviceExtensions.swift */; };
 		51959481257B24F400412A50 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51959480257B24F400412A50 /* ArrayExtensions.swift */; };
 		51959486257B3F7000412A50 /* RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51959485257B3F7000412A50 /* RowItem.swift */; };
+		5195948B257B51D800412A50 /* NewsCellRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5195948A257B51D800412A50 /* NewsCellRowView.xib */; };
+		51959490257B52F000412A50 /* NewsCellRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195948F257B52F000412A50 /* NewsCellRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		5195947B257B248A00412A50 /* UIDeviceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtensions.swift; sourceTree = "<group>"; };
 		51959480257B24F400412A50 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		51959485257B3F7000412A50 /* RowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItem.swift; sourceTree = "<group>"; };
+		5195948A257B51D800412A50 /* NewsCellRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCellRowView.xib; sourceTree = "<group>"; };
+		5195948F257B52F000412A50 /* NewsCellRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				51959476257B0F8D00412A50 /* CustomImageView.swift */,
+				5195948A257B51D800412A50 /* NewsCellRowView.xib */,
+				5195948F257B52F000412A50 /* NewsCellRowView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			files = (
 				519594032579931C00412A50 /* LaunchScreen.storyboard in Resources */,
 				519594002579931C00412A50 /* Assets.xcassets in Resources */,
+				5195948B257B51D800412A50 /* NewsCellRowView.xib in Resources */,
 				519593FE2579931A00412A50 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +373,7 @@
 				519593FB2579931A00412A50 /* ViewController.swift in Sources */,
 				519593F72579931A00412A50 /* AppDelegate.swift in Sources */,
 				5195943E257A0D2A00412A50 /* NewsData.swift in Sources */,
+				51959490257B52F000412A50 /* NewsCellRowView.swift in Sources */,
 				51959486257B3F7000412A50 /* RowItem.swift in Sources */,
 				5195946F257A220500412A50 /* NewsCell.swift in Sources */,
 				519593F92579931A00412A50 /* SceneDelegate.swift in Sources */,
