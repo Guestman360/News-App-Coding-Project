@@ -11,8 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsCellRowView" customModule="News_App" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="uEU-4H-qAD"/>
-                <outlet property="headlineLabel" destination="94O-xi-OvF" id="uMv-fQ-tY5"/>
-                <outlet property="summaryLabel" destination="Im2-nB-4d6" id="ggf-4l-OwL"/>
+                <outlet property="headlineLabel" destination="Im2-nB-4d6" id="pRW-6T-ksF"/>
+                <outlet property="summaryLabel" destination="94O-xi-OvF" id="kid-LW-jtQ"/>
                 <outlet property="teaserImageView" destination="yCJ-Vs-NWw" id="9KE-Il-fB6"/>
             </connections>
         </placeholder>
@@ -21,12 +21,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Im2-nB-4d6">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Im2-nB-4d6">
                     <rect key="frame" x="78" y="0.0" width="336" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="YOz-a9-6iu"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -36,12 +36,12 @@
                         <constraint firstAttribute="width" secondItem="yCJ-Vs-NWw" secondAttribute="height" multiplier="1:1" id="MZc-pa-UQl"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94O-xi-OvF">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94O-xi-OvF">
                     <rect key="frame" x="78" y="35" width="336" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="hU6-S6-gBW"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
