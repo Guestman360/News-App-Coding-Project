@@ -27,6 +27,7 @@
 		51959461257A201000412A50 /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51959460257A201000412A50 /* URLSessionExtensions.swift */; };
 		51959467257A21D600412A50 /* ProminentNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51959466257A21D600412A50 /* ProminentNewsCell.swift */; };
 		5195946F257A220500412A50 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195946E257A220500412A50 /* NewsCell.swift */; };
+		51959477257B0F8D00412A50 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51959476257B0F8D00412A50 /* CustomImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		51959460257A201000412A50 /* URLSessionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtensions.swift; sourceTree = "<group>"; };
 		51959466257A21D600412A50 /* ProminentNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProminentNewsCell.swift; sourceTree = "<group>"; };
 		5195946E257A220500412A50 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		51959476257B0F8D00412A50 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		519594352579A60100412A50 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				51959475257B0F7200412A50 /* Custom Views */,
 				51959465257A218600412A50 /* Cells */,
 				519594382579A69400412A50 /* NewsTableViewController.swift */,
 			);
@@ -210,6 +213,14 @@
 				5195946E257A220500412A50 /* NewsCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		51959475257B0F7200412A50 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				51959476257B0F8D00412A50 /* CustomImageView.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +362,7 @@
 				51959467257A21D600412A50 /* ProminentNewsCell.swift in Sources */,
 				51959448257A0D8D00412A50 /* Article.swift in Sources */,
 				5195945C257A14BF00412A50 /* NewsService.swift in Sources */,
+				51959477257B0F8D00412A50 /* CustomImageView.swift in Sources */,
 				519594392579A69400412A50 /* NewsTableViewController.swift in Sources */,
 				51959461257A201000412A50 /* URLSessionExtensions.swift in Sources */,
 				51959457257A0EBF00412A50 /* ArticleViewModel.swift in Sources */,

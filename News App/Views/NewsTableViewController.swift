@@ -60,7 +60,6 @@ class NewsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProminentNewsCell.identifier, for: indexPath) as! ProminentNewsCell
 
         let section = self.sectionListViewModel.sectionAtIndex(indexPath.section)
-        // change items to articles??
         if let article = section.articleAtIndex(indexPath.row) {
             cell.setUpCellWithViewModel(article)
         }
