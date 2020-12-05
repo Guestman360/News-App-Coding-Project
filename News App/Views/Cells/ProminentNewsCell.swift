@@ -27,12 +27,18 @@ class ProminentNewsCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
-    func setUpCellWithViewModel(_ article: ArticleViewModel) {
-        self.teaserImageView.loadImage(with: article.tease)
-        let attrs = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: .bold)]
-        let headlineAttributedText = NSMutableAttributedString(string: article.headline, attributes: attrs)
-        self.headlineLabel.attributedText = headlineAttributedText
-        self.summaryLabel.text = article.summary
+    
+    func setUpCellWithSectionViewModel(_ section: SectionViewModel) {
+        let articleInSection = section.rowsForSection.first
+        if let articleRow = articleInSection?.items.first,
+           let tease = articleRow.tease,
+           let headline = articleRow.headline {
+            
+            self.teaserImageView.loadImage(with: tease)
+            let attrs = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: .bold)]
+            let headlineAttributedText = NSMutableAttributedString(string: headline, attributes: attrs)
+            self.headlineLabel.attributedText = headlineAttributedText
+            self.summaryLabel.text = articleRow.summary
+        }
     }
 }

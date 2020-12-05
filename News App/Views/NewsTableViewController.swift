@@ -47,7 +47,7 @@ class NewsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sectionItems = self.sectionListViewModel.sectionItems[section].items else { return 0 }
+        let sectionItems = self.sectionListViewModel.sectionAtIndex(section).rowsForSection
         return sectionItems.count
     }
     
@@ -57,14 +57,16 @@ class NewsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ProminentNewsCell.identifier, for: indexPath) as! ProminentNewsCell
-
         let section = self.sectionListViewModel.sectionAtIndex(indexPath.section)
-        if let article = section.articleAtIndex(indexPath.row) {
-            cell.setUpCellWithViewModel(article)
+        if indexPath.row == 0 {
+            let prominentNewsCell = tableView.dequeueReusableCell(withIdentifier: ProminentNewsCell.identifier, for: indexPath) as! ProminentNewsCell
+            prominentNewsCell.setUpCellWithSectionViewModel(section)
+            return prominentNewsCell
         }
-
-        return cell
+        
+        let newsCell = tableView.dequeueReusableCell(withIdentifier: NewsCell.identifier, for: indexPath) as! NewsCell
+        newsCell.textLabel?.text = "TBD"
+        return newsCell
     }
     
 

@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct SectionViewModel {
     private let sectionItem: SectionItem
+    private var rowItems: [RowItem]?
     
     var id: String {
         return self.sectionItem.id ?? ""
@@ -26,8 +28,13 @@ struct SectionViewModel {
         return self.sectionItem.items ?? []
     }
     
+    var rowsForSection: [RowItem] {
+        return self.rowItems ?? []
+    }
+    
     init(_ sectionItem: SectionItem) {
         self.sectionItem = sectionItem
+        self.rowItems = convertArticlesToRowItems()
     }
     
     func numberOfSections() -> Int {
@@ -43,5 +50,31 @@ struct SectionViewModel {
             return nil
         }
         return ArticleViewModel(article)
+    }
+    
+    func rowAtIndex(_ index: Int) -> RowItem? {
+        let rowItem = rowsForSection[index]
+        return rowItem
+    }
+    
+    func convertArticlesToRowItems() -> [RowItem] {
+        guard self.items.count > 0 else {
+            return []
+        }
+        
+        var rowItems: [RowItem] = []
+        let itemsPerRow = UIDevice.isPhone ? 2 : 3
+        
+        let firstItem = self.items.first!
+        let firstRowItem = RowItem(items: [firstItem])
+        rowItems.append(firstRowItem)
+        
+        let groupItems = Array(self.items.dropFirst()).chunked(into: itemsPerRow)
+        
+        for groups in groupItems {
+            let rowItem = RowItem(items: groups)
+            rowItems.append(rowItem)
+        }
+        return rowItems
     }
 }

@@ -63,6 +63,14 @@
                                     <outlet property="teaserImageView" destination="LOP-69-AJU" id="kbR-U4-QTs"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="50" id="pR4-z0-U52" customClass="NewsCell" customModule="News_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="328" width="414" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pR4-z0-U52" id="7ZN-r7-1bm">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="rQ5-fz-qID" id="UP0-Kg-bto"/>

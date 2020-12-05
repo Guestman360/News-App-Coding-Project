@@ -25,14 +25,6 @@ struct SectionListViewModel {
         return sectionItems.count
     }
     
-    func numberOfRowsForSection(_ sectionIndex: Int) -> Int {
-        // Might refactor later
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            return 3
-        }
-        return 2
-    }
-    
     func sectionAtIndex(_ index: Int) -> SectionViewModel {
         return SectionViewModel(sectionItems[index])
     }
