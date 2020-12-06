@@ -21,7 +21,7 @@ struct SectionViewModel {
     }
     
     var header: String? {
-        return self.sectionItem.header ?? " "
+        return self.sectionItem.header ?? "News"
     }
     
     var items: [Article] {
