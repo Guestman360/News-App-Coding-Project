@@ -16,17 +16,6 @@ class ProminentNewsCell: UITableViewCell {
     @IBOutlet weak var summaryLabel: UILabel!
     
     static let identifier = "ProminentNewsCell"
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func setUpCellWithSectionViewModel(_ section: SectionViewModel) {
         let articleInSection = section.rowsForSection.first

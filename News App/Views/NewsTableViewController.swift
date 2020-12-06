@@ -21,10 +21,6 @@ class NewsTableViewController: UITableViewController {
         
         self.tableView.register(NewsCell.self, forCellReuseIdentifier: NewsCell.identifier)
         
-        // putting labels in stackview causes issues when scrolling
-//        self.tableView.rowHeight = UITableView.automaticDimension
-//        self.tableView.estimatedRowHeight = 200.0
-        
         fetchNewsFromService()
     }
     
@@ -49,7 +45,7 @@ class NewsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         guard let viewModel = self.sectionListViewModel else { return 0 }
-        return viewModel.numberOfSections(section: .section)
+        return viewModel.numberOfSections()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,8 +67,7 @@ class NewsTableViewController: UITableViewController {
         }
         
         let newsCell = tableView.dequeueReusableCell(withIdentifier: NewsCell.identifier, for: indexPath) as! NewsCell
-        
-        // Configure Cell...
+        newsCell.setUpCellWithSectionViewModel(section, indexPath.row)
         
         return newsCell
     }

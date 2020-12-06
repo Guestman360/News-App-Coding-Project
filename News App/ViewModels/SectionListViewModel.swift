@@ -21,7 +21,7 @@ struct SectionListViewModel {
         self.sectionItems = sectionItems.filter { $0.type == type.rawValue }
     }
     
-    func numberOfSections(section type: Header) -> Int {
+    func numberOfSections() -> Int {
         return sectionItems.count
     }
     
