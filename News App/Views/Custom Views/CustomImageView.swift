@@ -35,6 +35,7 @@ class CustomImageView: UIImageView {
             }
             DispatchQueue.main.async { [unowned self] in
                 imageCache.setObject(image, forKey: urlString as NSString)
+                // NOTE: unowned reference is sometimes deallocated here
                 self.image = image
             }
         }.resume()

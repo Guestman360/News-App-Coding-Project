@@ -16,8 +16,18 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.title = "NBC News"
+        self.title = "The News App"
+        
+        if #available(iOS 13.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            navBarAppearance.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0, blue: 0.5843137255, alpha: 1)
+            self.navigationController?.navigationBar.standardAppearance = navBarAppearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        }
         
         self.tableView.register(NewsCell.self, forCellReuseIdentifier: NewsCell.identifier)
         
