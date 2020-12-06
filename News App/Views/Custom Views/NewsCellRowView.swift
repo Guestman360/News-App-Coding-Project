@@ -30,9 +30,7 @@ class NewsCellRowView: UIView {
     private func initSubViews() {
         let nib = UINib(nibName: NEWS_CELL_ROW_VIEW_XIB, bundle: nil)
         nib.instantiate(withOwner: self, options: nil)
-        contentView.frame = bounds // CGRect(x: 0, y: 0, width: self.frame.width, height: 100)
-//        contentView.translatesAutoresizingMaskIntoConstraints = false
-//        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        contentView.frame = bounds
         addSubview(contentView)
         
         self.addConstraints()
@@ -53,9 +51,10 @@ class NewsCellRowView: UIView {
            let summary = article.summary {
 
             self.teaserImageView.loadImage(with: tease)
-            let attrs = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: .bold)]
-            let headlineAttributedText = NSMutableAttributedString(string: headline, attributes: attrs)
-            self.headlineLabel.attributedText = headlineAttributedText
+//            let attrs = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .bold)]
+//            let headlineAttributedText = NSMutableAttributedString(string: headline, attributes: attrs)
+//            self.headlineLabel.attributedText = headlineAttributedText
+            self.headlineLabel.text = headline
             self.summaryLabel.text = summary
         }
     }
