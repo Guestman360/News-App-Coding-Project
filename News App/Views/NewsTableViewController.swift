@@ -31,8 +31,18 @@ class NewsTableViewController: UITableViewController {
         }
         
         self.tableView.register(NewsCell.self, forCellReuseIdentifier: NewsCell.identifier)
+        searchBarSetup()
         
         fetchNewsFromService()
+    }
+    
+    func searchBarSetup() {
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: (UIScreen.main.bounds.width), height: 70))
+        searchBar.showsScopeBar = true
+        searchBar.selectedScopeButtonIndex = 0
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+        self.tableView.tableHeaderView = searchBar
     }
     
     private func fetchNewsFromService() {
@@ -89,7 +99,6 @@ class NewsTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
             print("Something went wrong when selected a row!")
@@ -103,5 +112,24 @@ class NewsTableViewController: UITableViewController {
         
         let destinationVC = segue.destination as! ArticleGroupDetailTableViewController
         destinationVC.articles = articles
+    }
+}
+
+extension NewsTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let filteredSections = sectionListViewModel.filteredSectionItemsList().filter { ($0.header?.lowercased().contains(searchText.lowercased()) ?? false) }
+        sectionListViewModel.filteredSectionItems = filteredSections
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        sectionListViewModel.filteredSectionItems = sectionListViewModel.sectionItems
+        searchBar.text?.removeAll()
+        searchBar.endEditing(true)
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
     }
 }

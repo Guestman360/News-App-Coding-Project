@@ -15,17 +15,23 @@ public enum Header: String, Decodable {
 }
 
 struct SectionListViewModel {
-    let sectionItems: [SectionItem]
+    var sectionItems: [SectionItem]
+    var filteredSectionItems: [SectionItem]
     
     init(sectionItems: [SectionItem], type: Header) {
         self.sectionItems = sectionItems.filter { $0.type == type.rawValue }
+        self.filteredSectionItems = self.sectionItems
     }
     
     func numberOfSections() -> Int {
-        return sectionItems.count
+        return filteredSectionItems.count
     }
     
     func sectionAtIndex(_ index: Int) -> SectionViewModel {
-        return SectionViewModel(sectionItems[index])
+        return SectionViewModel(filteredSectionItems[index])
+    }
+    
+    func filteredSectionItemsList() -> [SectionItem] {
+        return filteredSectionItems
     }
 }
