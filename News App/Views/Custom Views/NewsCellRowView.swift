@@ -12,7 +12,7 @@ class NewsCellRowView: UIView {
     let NEWS_CELL_ROW_VIEW_XIB = "NewsCellRowView"
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var teaserImageView: CustomImageView!
+    @IBOutlet weak var teaserImageView: UIImageView!
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     
@@ -46,14 +46,11 @@ class NewsCellRowView: UIView {
     }
 
     func setUpNewsCellItemView(_ article: Article) {
-        if let tease = article.tease,
+        if let teaserUrlString = article.tease,
            let headline = article.headline,
            let summary = article.summary {
 
-            self.teaserImageView.loadImage(with: tease)
-//            let attrs = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .bold)]
-//            let headlineAttributedText = NSMutableAttributedString(string: headline, attributes: attrs)
-//            self.headlineLabel.attributedText = headlineAttributedText
+            self.teaserImageView.loadImage(from: teaserUrlString, placeHolder: UIImage(systemName: "placeholder"))
             self.headlineLabel.text = headline
             self.summaryLabel.text = summary
         }

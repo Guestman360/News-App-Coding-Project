@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5153EED8257DEC04000FBE1C /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153EED7257DEC03000FBE1C /* UIImageViewExtensions.swift */; };
 		519593F72579931A00412A50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519593F62579931A00412A50 /* AppDelegate.swift */; };
 		519593F92579931A00412A50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519593F82579931A00412A50 /* SceneDelegate.swift */; };
 		519593FB2579931A00412A50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519593FA2579931A00412A50 /* ViewController.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5153EED7257DEC03000FBE1C /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		519593F32579931A00412A50 /* News App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "News App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		519593F62579931A00412A50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		519593F82579931A00412A50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				51959460257A201000412A50 /* URLSessionExtensions.swift */,
 				5195947B257B248A00412A50 /* UIDeviceExtensions.swift */,
 				51959480257B24F400412A50 /* ArrayExtensions.swift */,
+				5153EED7257DEC03000FBE1C /* UIImageViewExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				51959490257B52F000412A50 /* NewsCellRowView.swift in Sources */,
 				51959486257B3F7000412A50 /* RowItem.swift in Sources */,
 				5195946F257A220500412A50 /* NewsCell.swift in Sources */,
+				5153EED8257DEC04000FBE1C /* UIImageViewExtensions.swift in Sources */,
 				519593F92579931A00412A50 /* SceneDelegate.swift in Sources */,
 				51959467257A21D600412A50 /* ProminentNewsCell.swift in Sources */,
 				51959481257B24F400412A50 /* ArrayExtensions.swift in Sources */,

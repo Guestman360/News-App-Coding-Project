@@ -14,7 +14,7 @@ class ProminentNewsCell: UITableViewCell {
     
     @IBOutlet weak var cellBackgroundView: UIView!
     
-    @IBOutlet weak var teaserImageView: CustomImageView!
+    @IBOutlet weak var teaserImageView: UIImageView!
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     
@@ -35,13 +35,11 @@ class ProminentNewsCell: UITableViewCell {
         
         let articleInSection = section.rowsForSection.first
         if let articleRow = articleInSection?.items.first,
-           let tease = articleRow.tease,
+           let teaserUrlString = articleRow.tease,
            let headline = articleRow.headline {
             
-            self.teaserImageView.loadImage(with: tease)
-            let attrs = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: .bold)]
-            let headlineAttributedText = NSMutableAttributedString(string: headline, attributes: attrs)
-            self.headlineLabel.attributedText = headlineAttributedText
+            self.teaserImageView.loadImage(from: teaserUrlString, placeHolder: UIImage(systemName: "placeholder"))
+            self.headlineLabel.text = headline
             self.summaryLabel.text = articleRow.summary
         }
     }
