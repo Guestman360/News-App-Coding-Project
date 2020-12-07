@@ -20,6 +20,7 @@ class NewsTableViewController: UITableViewController {
         
         if #available(iOS 13.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationBar.tintColor = .white
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
             navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -82,15 +83,25 @@ class NewsTableViewController: UITableViewController {
         return newsCell
     }
     
-
-    /*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "segueToArticleDetail", sender: self)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+            print("Something went wrong when selected a row!")
+            return
+        }
+        
+        let section = selectedIndexPath.section
+        let row = selectedIndexPath.row
+        let sectionItems = self.sectionListViewModel.sectionAtIndex(section).rowsForSection
+        let articles = sectionItems[row].items
+        
+        let destinationVC = segue.destination as! ArticleGroupDetailTableViewController
+        destinationVC.articles = articles
     }
-    */
-
 }

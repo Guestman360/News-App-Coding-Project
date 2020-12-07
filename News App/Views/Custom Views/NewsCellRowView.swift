@@ -50,7 +50,7 @@ class NewsCellRowView: UIView {
            let headline = article.headline,
            let summary = article.summary {
 
-            self.teaserImageView.loadImage(from: teaserUrlString, placeHolder: UIImage(systemName: "placeholder"))
+            self.teaserImageView.loadImage(from: teaserUrlString, placeHolder: UIImage(named: "placeholder"))
             self.headlineLabel.text = headline
             self.summaryLabel.text = summary
         }
