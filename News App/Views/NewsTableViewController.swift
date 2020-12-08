@@ -117,7 +117,9 @@ class NewsTableViewController: UITableViewController {
 
 extension NewsTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let filteredSections = sectionListViewModel.filteredSectionItemsList().filter { ($0.header?.lowercased().contains(searchText.lowercased()) ?? false) }
+        let filteredSections = sectionListViewModel.filteredSectionItemsList().filter {
+            ($0.header?.lowercased().contains(searchText.lowercased()) ?? false)
+        }
         sectionListViewModel.filteredSectionItems = filteredSections
         tableView.reloadData()
     }

@@ -9,4 +9,5 @@ import Foundation
 
 struct Constants {
     static let BASE_NEWS_API_URL = "https://s3.amazonaws.com/shrekendpoint/news.json"
+    static let PLACEHOLER_IMAGE = "placeholder"
 }

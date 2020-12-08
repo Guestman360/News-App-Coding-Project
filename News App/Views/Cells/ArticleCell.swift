@@ -30,7 +30,7 @@ class ArticleCell: UITableViewCell {
            let summary = article.summary,
            let articleUrl = article.url {
 
-            self.articleImage.loadImage(from: teaserUrlString, placeHolder: UIImage(named: "placeholder"))
+            self.articleImage.loadImage(from: teaserUrlString, placeHolder: UIImage(named: Constants.PLACEHOLER_IMAGE))
             self.headlineLabel.text = headline
             self.summaryLabel.text = summary
             self.articleUrl = articleUrl

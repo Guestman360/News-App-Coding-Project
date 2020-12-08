@@ -38,7 +38,7 @@ class ProminentNewsCell: UITableViewCell {
            let teaserUrlString = articleRow.tease,
            let headline = articleRow.headline {
             
-            self.teaserImageView.loadImage(from: teaserUrlString, placeHolder: UIImage(named: "placeholder"))
+            self.teaserImageView.loadImage(from: teaserUrlString, placeHolder: UIImage(named: Constants.PLACEHOLER_IMAGE))
             self.headlineLabel.text = headline
             self.summaryLabel.text = articleRow.summary
         }
